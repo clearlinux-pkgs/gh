@@ -1,0 +1,38 @@
+From 1de5fd43fc05e905878cdc1a1f5384c00d022727 Mon Sep 17 00:00:00 2001
+From: Ganesh Maharaj Mahalingam <ganesh.mahalingam@intel.com>
+Date: Fri, 1 Oct 2021 16:19:26 -0700
+Subject: [PATCH] Find version from folder name
+
+Also move the resulting binary to be at /usr/bin vs /usr/local/bin for
+clearlinux.
+
+Signed-off-by: Ganesh Maharaj Mahalingam <ganesh.mahalingam@intel.com>
+---
+ Makefile | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 46d40a7a928b3f21ff73cd32aab9430c204a84b5..27ff4f29d83848b18cd8190bd70aa0cd9d103e76 100644
+--- a/Makefile
++++ b/Makefile
+@@ -4,6 +4,8 @@ CGO_CFLAGS ?= ${CFLAGS}
+ export CGO_CFLAGS
+ CGO_LDFLAGS ?= $(filter -g -L% -l% -O%,${LDFLAGS})
+ export CGO_LDFLAGS
++GH_VERSION ?= $(shell basename $(shell dirname $(abspath $(lastword $(MAKEFILE_LIST)))) | awk -F- '{print $$NF}')
++export GH_VERSION
+ 
+ EXE =
+ ifeq ($(GOOS),windows)
+@@ -58,7 +60,7 @@ endif
+ ## Install/uninstall tasks are here for use on *nix platform. On Windows, there is no equivalent.
+ 
+ DESTDIR :=
+-prefix  := /usr/local
++prefix  := /usr
+ bindir  := ${prefix}/bin
+ mandir  := ${prefix}/share/man
+ 
+-- 
+2.33.0
+
