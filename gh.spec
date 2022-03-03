@@ -4,7 +4,7 @@
 #
 Name     : gh
 Version  : 2.5.2
-Release  : 9
+Release  : 10
 URL      : https://github.com/cli/cli/archive/refs/tags/v2.5.2.tar.gz
 Source0  : https://github.com/cli/cli/archive/refs/tags/v2.5.2.tar.gz
 Source1  : http://localhost/cgit/projects/gh-vendor/snapshot/gh-vendor-2.5.2.tar.xz
