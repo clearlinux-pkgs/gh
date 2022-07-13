@@ -4,7 +4,7 @@
 #
 Name     : gh
 Version  : 2.13.0
-Release  : 24
+Release  : 25
 URL      : https://github.com/cli/cli/archive/v2.13.0/cli-2.13.0.tar.gz
 Source0  : https://github.com/cli/cli/archive/v2.13.0/cli-2.13.0.tar.gz
 Source1  : http://localhost/cgit/projects/gh-vendor/snapshot/gh-vendor-2.13.0.tar.xz
