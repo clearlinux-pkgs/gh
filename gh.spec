@@ -4,7 +4,7 @@
 #
 Name     : gh
 Version  : 2.14.2
-Release  : 28
+Release  : 29
 URL      : https://github.com/cli/cli/archive/v2.14.2/cli-2.14.2.tar.gz
 Source0  : https://github.com/cli/cli/archive/v2.14.2/cli-2.14.2.tar.gz
 Source1  : http://localhost/cgit/projects/gh-vendor/snapshot/gh-vendor-2.14.2.tar.xz
