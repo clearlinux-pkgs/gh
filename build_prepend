@@ -1,1 +1,2 @@
 rm -f GNUmakefile
+unset CLEAR_DEBUG_TERSE
