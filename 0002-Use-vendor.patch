@@ -1,0 +1,25 @@
+From 7efdcb2f1a33dcd011e6592133b0042b0ea37ea9 Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Wed, 24 Jul 2024 17:14:46 -0700
+Subject: [PATCH] Use vendor
+
+---
+ script/build.go | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/script/build.go b/script/build.go
+index d7085f5..5d463fb 100644
+--- a/script/build.go
++++ b/script/build.go
+@@ -53,7 +53,7 @@ var tasks = map[string]func(string) error{
+ 			ldflags = fmt.Sprintf("-X github.com/cli/cli/v2/internal/authflow.oauthClientID=%s %s", os.Getenv("GH_OAUTH_CLIENT_ID"), ldflags)
+ 		}
+ 
+-		return run("go", "build", "-trimpath", "-ldflags", ldflags, "-o", exe, "./cmd/gh")
++		return run("go", "build", "-trimpath", "-ldflags", ldflags, "-mod", "vendor", "-o", exe, "./cmd/gh")
+ 	},
+ 	"manpages": func(_ string) error {
+ 		return run("go", "run", "./cmd/gen-docs", "--man-page", "--doc-path", "./share/man/man1/")
+-- 
+2.45.1
+
